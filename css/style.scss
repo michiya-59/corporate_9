@@ -118,6 +118,7 @@ body{
       padding-top: 104px;
       text-align: right;
       margin-right: 245px;
+      font-style: italic;
       &::after{
         content: "";
         position: absolute;
@@ -212,5 +213,100 @@ body{
       color: #ffffff;
       opacity: 0.1;
     }
+  }
+}
+
+.service{
+  .service_title{
+    padding: 0 220px;
+    margin-top: 70px;
+    position: relative;
+    font-size: 3.57rem;
+    margin-bottom: 70px;
+    font-style: italic;
+  }
+  .work_items{
+    display: flex;
+    height: 320px;
+    .work_item1{
+      width: calc(100%/3);
+      cursor: pointer;
+      position: relative;
+      transition: .5s;
+      &:hover{
+        background-color: rgb(9 9 9 / 77%);
+        transition: .5s;
+      }
+      img:hover{
+        transition: .5s;
+        opacity: 0.4;
+      }
+      &::before{
+        content: 'Hearing';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        font-size: 2.5rem;
+        color: white;
+        top: 43%;
+        left: 34%;
+      }
+    }
+    .work_item2{
+      width: calc(100%/3);
+      cursor: pointer;
+      position: relative;
+      transition: .5s;
+      &:hover{
+        background-color: rgb(9 9 9 / 77%);
+        transition: .5s;
+      }
+      img:hover{
+        transition: .5s;
+        opacity: 0.4;
+      }
+      &::before{
+        content: 'Planning';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        font-size: 2.5rem;
+        color: white;
+        top: 43%;
+        left: 34%;
+      }
+    }
+    .work_item3{
+      width: calc(100%/3);
+      cursor: pointer;
+      position: relative;
+      transition: .5s;
+      &:hover{
+        background-color: rgb(9 9 9 / 77%);
+        transition: .5s;
+      }
+      img:hover{
+        transition: .5s;
+        opacity: 0.4;
+      }
+      &::before{
+        content: 'Direction';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        font-size: 2.5rem;
+        color: white;
+        top: 43%;
+        left: 34%;
+      }
+    }
+  }
+  .service_subtitle{
+    margin: 70px 0;
+    font-size: 5.625rem;
+    color: #171717;
+    opacity: 0.1;
+    padding: 0 220px;
+    text-align: right;
   }
 }

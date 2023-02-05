@@ -133,6 +133,7 @@ body {
   padding-top: 104px;
   text-align: right;
   margin-right: 245px;
+  font-style: italic;
 }
 .works .works_content .works_title::after {
   content: "";
@@ -247,4 +248,108 @@ body {
   font-size: 5.625rem;
   color: #ffffff;
   opacity: 0.1;
+}
+
+.service .service_title {
+  padding: 0 220px;
+  margin-top: 70px;
+  position: relative;
+  font-size: 3.57rem;
+  margin-bottom: 70px;
+  font-style: italic;
+}
+.service .work_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 320px;
+}
+.service .work_items .work_item1 {
+  width: 33.3333333333%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item1:hover {
+  background-color: rgba(9, 9, 9, 0.77);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item1 img:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.4;
+}
+.service .work_items .work_item1::before {
+  content: "Hearing";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  font-size: 2.5rem;
+  color: white;
+  top: 43%;
+  left: 34%;
+}
+.service .work_items .work_item2 {
+  width: 33.3333333333%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item2:hover {
+  background-color: rgba(9, 9, 9, 0.77);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item2 img:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.4;
+}
+.service .work_items .work_item2::before {
+  content: "Planning";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  font-size: 2.5rem;
+  color: white;
+  top: 43%;
+  left: 34%;
+}
+.service .work_items .work_item3 {
+  width: 33.3333333333%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item3:hover {
+  background-color: rgba(9, 9, 9, 0.77);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.service .work_items .work_item3 img:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.4;
+}
+.service .work_items .work_item3::before {
+  content: "Direction";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  font-size: 2.5rem;
+  color: white;
+  top: 43%;
+  left: 34%;
+}
+.service .service_subtitle {
+  margin: 70px 0;
+  font-size: 5.625rem;
+  color: #171717;
+  opacity: 0.1;
+  padding: 0 220px;
+  text-align: right;
 }/*# sourceMappingURL=style.css.map */
