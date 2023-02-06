@@ -186,6 +186,7 @@ body{
         height: 1px;
         transition: .5s;
         background: black;
+        
       }
       &::after{
         content: '';
@@ -224,6 +225,15 @@ body{
     font-size: 3.57rem;
     margin-bottom: 70px;
     font-style: italic;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 200px;
+      top: 35px;
+      height: 3px;
+      background-color: black;
+      margin-left: 30px;
+    }
   }
   .work_items{
     display: flex;
@@ -250,6 +260,7 @@ body{
         color: white;
         top: 43%;
         left: 34%;
+        font-style: italic;
       }
     }
     .work_item2{
@@ -274,6 +285,7 @@ body{
         color: white;
         top: 43%;
         left: 34%;
+        font-style: italic;
       }
     }
     .work_item3{
@@ -298,6 +310,7 @@ body{
         color: white;
         top: 43%;
         left: 34%;
+        font-style: italic;
       }
     }
   }
@@ -308,5 +321,140 @@ body{
     opacity: 0.1;
     padding: 0 220px;
     text-align: right;
+    font-style: italic;
+  }
+}
+
+
+
+.contact{
+  background-image: url('../image/contact-bgi@2x.jpg');
+  height: 666px;
+  .contact_content{
+    padding: 0 120px;
+    margin-top: 70px;
+    position: relative;
+    .contact_title{
+      font-size: 3.57rem;
+      margin-bottom: 80px;
+      color: white;
+      padding-top: 104px;
+      text-align: right;
+      margin-right: 245px;
+      font-style: italic;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 200px;
+        top: 140px;
+        right: 123px;
+        height: 3px;
+        background-color: white;
+        margin-left: 30px;
+      }
+    }
+    .contact_form_btn{
+      text-align: center;
+      p{
+        font-size: 1.25rem;
+        color: white;
+        margin-bottom: 40px;
+      }
+      a{
+        padding: 19px 84px;
+        background: white;
+        border-radius: 40px;
+        display: inline-block;
+        margin-bottom: 70px;
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+    }
+    .contact_subtitle{
+      margin-top: 70px;
+      font-size: 5.625rem;
+      color: #ffffff;
+      opacity: 0.1;
+    }
+  }
+}
+
+.footer{
+  height: 79px;
+  text-align: center;
+  line-height: 79px;
+  font-size: 0.875rem;
+}
+
+.contact_page{
+  background-image: url('../image/contact-page-bgi@2x.jpg');
+  height: 453px;
+  position: relative;
+  .contact_page_title{
+    font-size: 3.57rem;
+    text-align: center;
+    line-height: 453px;
+    color: white;
+    font-style: italic;
+    margin: 0;
+  }
+  .contact_page_subtitle{
+    position: absolute;
+    font-size: 5.625rem;
+    color: #ffffff;
+    opacity: 0.1;
+    padding-left: 48px;
+    bottom: 48px;
+  }
+}
+
+// 問い合わせフォーム画面
+.contact_form{
+  padding: 100px 370px 0 370px;
+  .form_part_checkbox{
+    margin-bottom: 35px;
+    label{
+      font-weight: bold;
+      margin-bottom: 7px;
+      display: block;
+    }
+    span{
+      margin: 0 20px 0 5px;
+    }
+  }
+  .form_part{
+    margin-bottom: 25px;
+    label{
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input{
+      border-radius: 3px;
+      border: 1px solid black;
+      width: 700px;
+      height: 30px;
+      margin-bottom: 25px;
+    }
+    textarea{
+      border: 1px solid black;
+      width: 700px;
+      height: 171px;
+      border-radius: 3px;
+      margin-bottom: 80px;
+    }
+  }
+  .view_more_btn_form {
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    width: 235px;
+    margin: 0px auto 110px auto;
+    padding: 1rem 4rem;
+    font-weight: bold;
+    background: white;
+    color: black;
+    border-radius: 100vh;
   }
 }
