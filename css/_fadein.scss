@@ -1,0 +1,17 @@
+@mixin fedein($opacity, $translate, $delay: 0){
+  opacity: $opacity;
+  transform: $translate;
+  transition: 1.5s;
+  transition-delay: $delay;
+}
+
+@mixin fedeout($opacity, $translate){
+  opacity: $opacity;
+  transform: $translate;
+  transition: 1.5s;
+}
+
+@mixin slider_fadein($translate){
+  transform: $translate;
+  transition: 1.2s;
+}
