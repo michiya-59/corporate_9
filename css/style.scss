@@ -11,10 +11,14 @@ body{
   position: fixed;
   width: 100%;
   z-index: 10;
-  background-color: #282f35bd;
+  transition: .5s;
   .header_icon{
     width: 40%;
     padding: 32px 120px;
+    @include media{
+      padding: 24px 15px;
+      width: 70%;
+    }
     a{
       font-size: 1.625rem;
       font-style: italic;
@@ -23,6 +27,10 @@ body{
   .header_menu{
     width: 60%;
     line-height: 29.9px;
+    @include media{
+      display: none;
+
+    }
     ul{
       display: flex;
       justify-content: end;
@@ -37,6 +45,88 @@ body{
       }
     };
   }
+  .hunbargur_menu{
+    display: block;
+    position: fixed;
+    width: 42px;
+    height: 42px;
+    right: 0;
+    margin: 24px 10px 0 0;
+    z-index: 10;
+    transition: .5s;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    @include media{
+      opacity: 1;
+      pointer-events: visible;
+      span{
+        width: 35px;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        left: 3px;
+      }
+      span:nth-child(1){
+        top: 5px;
+        transition: .5s;
+      }
+      span:nth-child(2){
+        top: 17px;
+        transition: .5s;
+      }
+      span:nth-child(3){
+        top: 30px;
+        transition: .5s;
+      }
+    }
+  }
+  .hunbargur_menu.active span:nth-child(1){
+    transform: translateY(11px) rotate(405deg);
+    transition: .5s;
+  }
+  .hunbargur_menu.active span:nth-child(2){
+    opacity: 0;
+    transition: .5s;
+  }
+  .hunbargur_menu.active span:nth-child(3){
+    transform: translateY(-14px) rotate(315deg);
+    transition: .5s;
+  }
+
+  .mask_menu{
+    position: fixed;
+    background: #282F35;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-500px);
+    transition: .5s;
+    ul{
+      padding-top: 270px;
+      display: flex;
+      flex-direction: column;
+      li{
+        display: inline-block;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .mask_menu.active{
+    transform: translateY(0px);
+    transition: .5s;
+    opacity: 1;
+    pointer-events: visible;
+    z-index: 3;
+  }
+}
+.header.active{
+  transition: .5s;
+  background-color: #282f35bd;
 }
 
 .imgae_slider {
@@ -46,6 +136,20 @@ body{
   img{
     width: 100%;
     object-fit: cover;
+  }
+  @include media{
+    height: 559px;
+    div{
+      width: auto;
+      img{
+        height: 100vh;
+        margin: auto;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
   }
 }
 .imgae_slider .slick-slide{
@@ -63,23 +167,45 @@ body{
   p{
     font-size: 2.5rem;
   }
+  @include media{
+    top: 41%;
+    padding-left: 28px;
+    h1{
+      font-size: 2.32rem;
+      text-align: center;
+    }
+    p{
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 19px;
+    }
+  }
 }
 
 .concept{
   padding: 0 120px;
   margin-top: 70px;
   overflow: hidden;
-
+  @include media{
+    padding: 0 20px;
+  }
   .concept_content{
     margin-left: auto;
     width: 1100px;
     padding-right: 100px;
     height: 739px;
     position: relative;
-
+    @include media{
+      width: 100%;
+      padding: 0;
+      height: 100%;
+    }
     .concept_title{
       font-size: 3.57rem;
       margin-bottom: 70px;
+      @include media{
+        font-size: 1.875rem;
+      }
       @include slider_fadein(translateX(1500px));
       &::after{
         content: "";
@@ -89,6 +215,10 @@ body{
         height: 3px;
         background-color: black;
         margin-left: 30px;
+        @include media{
+          width: 100px;
+          top: 18px;
+        }
       }
     }
     .concept_title.active{
@@ -98,26 +228,40 @@ body{
       font-size: 1.875rem;
       text-align: center;
       margin-bottom: 60px;
-      @include fedein(0, translateY(100px));
+      @include fadein(0, translateY(100px));
     }
     .concept_subtitle.active{
-      @include fedein(1, translateY(0px));
+      @include fadein(1, translateY(0px));
     }
     .concept_explanation{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include media{
+        flex-direction: column;
+      }
       p{
         width: 440px;
         line-height: 30px;
-        @include fedein(0, translateY(100px));
+        @include fadein(0, translateY(100px));
+        @include media{
+          width: 100%;
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
       }
       img{
         width: 440px;
-        @include fedein(0, translateY(100px));
+        @include fadein(0, translateY(100px));
+        @include media{
+          height: 150px;
+          width: 100%;
+          object-fit: cover;
+          object-position: 0% 100%;
+        }
       }
       .active{
-        @include fedein(1, translateY(0px));
+        @include fadein(1, translateY(0px));
       }
     }
     .concept_title2{
@@ -125,21 +269,32 @@ body{
       font-size: 5.625rem;
       color: #171717;
       text-align: right;
-      @include fedeout(0, translateY(-30px))
+      @include fadeout(0, translateY(-30px));
+      @include media{
+        margin: 40px 0;
+        font-size: 2.5rem;
+      }
     }
     .concept_title2.active{
-      @include fedeout(0.09, translateY(0px))
+      @include fadeout(0.09, translateY(0px))
     }
   }
 }
 
 .works{
   background-image: url('../image/works-bgi@2x.jpg');
+  @include media{
+    overflow: hidden;
+  }
   .works_content{
     height: 986px;
     padding: 0 120px;
     margin-top: 70px;
     position: relative;
+    @include media{
+      padding: 0 15px;
+      height: 100%;
+    }
     .works_title{
       font-size: 3.57rem;
       margin-bottom: 70px;
@@ -149,6 +304,14 @@ body{
       margin-right: 245px;
       font-style: italic;
       @include slider_fadein(translateX(-1500px));
+      @include media{
+        font-size: 1.875rem;
+        padding: 0;
+        margin-bottom: 50px;
+        margin-right: 0px;
+        width: 111px;
+        margin-left: 119px;
+      }
       &::after{
         content: "";
         position: absolute;
@@ -159,6 +322,12 @@ body{
         background-color: white;
         margin-left: 30px;
         @include slider_fadein(translateX(-1500px));
+        @include media{
+          width: 84px;
+          top: 18px;
+          right: 253px;
+          margin-left: 0px;
+        }
       }
     }
     .works_title.active{
@@ -172,6 +341,10 @@ body{
       padding: 0 100px;
       justify-content: space-between;
       transition: .5s;
+      @include media{
+        flex-direction: column;
+        padding: 0;
+      }
       .work_part{
         height: 334px;
         width: 320px;
@@ -179,13 +352,22 @@ body{
         border-radius: 3px;
         box-shadow: 7px 8px 7px 2px #ffffff3d;
         overflow: hidden;
+        @include media{
+          width: 100%;
+          margin-bottom: 30px;
+        }
         .work_part_top{
           height: 200px;
           img{
-            @include fedein(0, translateY(10px));
+            @include fadein(0, translateY(10px));
+            @include media{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
           img.active{
-            @include fedein(1, translateY(0px));
+            @include fadein(1, translateY(0px));
           }
         }
         .work_part_bottom{
@@ -216,6 +398,9 @@ body{
       border-radius: 100vh;
       position: relative;
       transition: 0.5s;
+      @include media{
+        margin: 50px auto 0 auto;
+      }
       &:hover{
         opacity: 0.7;
       }
@@ -255,10 +440,15 @@ body{
       margin-top: 70px;
       font-size: 5.625rem;
       color: #ffffff;
-      @include fedeout(0, translateY(-30px))
+      @include fadeout(0, translateY(-30px));
+      @include media{
+        padding-bottom: 40px;
+        font-size: 2.5rem;
+        margin: 40px 0;
+      }
     }
     .work_title2.active{
-      @include fedeout(0.1, translateY(0px))
+      @include fadeout(0.1, translateY(0px));
     }
   }
 }
@@ -273,6 +463,11 @@ body{
     margin-bottom: 70px;
     font-style: italic;
     @include slider_fadein(translateX(1500px));
+    @include media{
+      font-size: 1.875rem;
+      padding: 0 15px;
+      margin: 60px 0;
+    }
     &::after{
       content: "";
       position: absolute;
@@ -282,6 +477,10 @@ body{
       background-color: black;
       margin-left: 30px;
       @include slider_fadein(translateX(1500px));
+      @include media{
+        width: 100px;
+        top: 20px;
+      }
     }
   }
   .service_title.active{
@@ -293,11 +492,22 @@ body{
   .work_items{
     display: flex;
     height: 320px;
+    @include media{
+      flex-direction: column;
+      height: 100%;
+    }
     .work_item1{
       width: calc(100%/3);
       cursor: pointer;
       position: relative;
       transition: .5s;
+      @include media{
+        margin-bottom: 30px;
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
       &:hover{
         background-color: rgb(9 9 9 / 77%);
         transition: .5s;
@@ -316,17 +526,28 @@ body{
         top: 43%;
         left: 34%;
         font-style: italic;
-        @include fedein(0, translateY(100px));
+        @include fadein(0, translateY(100px));
+        @include media{
+          left: 0%;
+          text-align: center;
+        }
       }
     }
     .work_item1.active::before{
-      @include fedein(1, translateY(0px), 2s);
+      @include fadein(1, translateY(0px));
     }
     .work_item2{
       width: calc(100%/3);
       cursor: pointer;
       position: relative;
       transition: .5s;
+      @include media{
+        margin-bottom: 30px;
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
       &:hover{
         background-color: rgb(9 9 9 / 77%);
         transition: .5s;
@@ -345,17 +566,28 @@ body{
         top: 43%;
         left: 34%;
         font-style: italic;
-        @include fedein(0, translateY(100px));
+        @include fadein(0, translateY(100px));
+        @include media{
+          left: 0%;
+          text-align: center;
+        }
       }
     }
     .work_item2.active::before{
-      @include fedein(1, translateY(0px), 2s);
+      @include fadein(1, translateY(0px));
     }
     .work_item3{
       width: calc(100%/3);
       cursor: pointer;
       position: relative;
       transition: .5s;
+      @include media{
+        margin-bottom: 30px;
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
       &:hover{
         background-color: rgb(9 9 9 / 77%);
         transition: .5s;
@@ -374,12 +606,15 @@ body{
         top: 43%;
         left: 34%;
         font-style: italic;
-        @include fedein(0, translateY(100px));
-
+        @include fadein(0, translateY(100px));
+        @include media{
+          left: 0%;
+          text-align: center;
+        }
       }
     }
     .work_item3.active::before{
-      @include fedein(1, translateY(0px), 2s);
+      @include fadein(1, translateY(0px));
     }
   }
   .service_subtitle{
@@ -389,10 +624,15 @@ body{
     padding: 0 220px;
     text-align: right;
     font-style: italic;
-    @include fedein(0, translateY(-30px));
+    @include fadein(0, translateY(-30px));
+    @include media{
+      font-size: 2.5rem;
+      padding: 0 15px 0 0;
+      margin: 10px 0 0px 0;
+    }
   }
   .service_subtitle.active{
-    @include fedein(0.1, translateY(0px));
+    @include fadein(0.1, translateY(0px));
   }
 }
 
@@ -401,10 +641,17 @@ body{
 .contact{
   background-image: url('../image/contact-bgi@2x.jpg');
   height: 666px;
+  @include media{
+    height: 100%;
+  }
   .contact_content{
     padding: 0 120px;
     margin-top: 70px;
     position: relative;
+    @include media{
+      padding: 0 15px;
+      margin-top: 60px;
+    }
     .contact_title{
       font-size: 3.57rem;
       margin-bottom: 80px;
@@ -414,6 +661,14 @@ body{
       margin-right: 245px;
       font-style: italic;
       @include slider_fadein(translateX(-1500px));
+      @include media{
+        font-size: 1.875rem;
+        padding: 100px 0 0 0;
+        margin-bottom: 50px;
+        margin-right: 0px;
+        width: 111px;
+        margin-left: 119px;
+      }
       &::after{
         content: "";
         position: absolute;
@@ -424,6 +679,12 @@ body{
         background-color: white;
         margin-left: 30px;
         @include slider_fadein(translateX(-1500px));
+        @include media{
+          width: 84px;
+          top: 117px;
+          right: 253px;
+          margin-left: 0px;
+        }
       }
     }
     .contact_title.active{
@@ -445,6 +706,9 @@ body{
         border-radius: 40px;
         display: inline-block;
         margin-bottom: 70px;
+        @include media{
+          margin-bottom: 0;
+        }
         &:hover{
           opacity: 0.7;
         }
@@ -454,10 +718,15 @@ body{
       margin-top: 70px;
       font-size: 5.625rem;
       color: #ffffff;
-      @include fadein(0, translateY(-30px))
+      @include fadein(0, translateY(-30px));
+      @include media{
+        font-size: 2.5rem;
+        padding-bottom: 60px;
+        margin-top: 40px;
+      }
     }
     .contact_subtitle.active{
-      @include fadein(0.1, translateY(0px))
+      @include fadein(0.1, translateY(0px));
     }
   }
 }

@@ -1,11 +1,11 @@
-@mixin fedein($opacity, $translate, $delay: 0){
+@mixin fadein($opacity, $translate, $delay: 0){
   opacity: $opacity;
   transform: $translate;
   transition: 1.5s;
   transition-delay: $delay;
 }
 
-@mixin fedeout($opacity, $translate){
+@mixin fadeout($opacity, $translate){
   opacity: $opacity;
   transform: $translate;
   transition: 1.5s;

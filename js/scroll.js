@@ -1,7 +1,8 @@
 'use strict'
 
 window.addEventListener('load', () => {
-  // conceptの部分
+  // ページの各要素
+  const header_menu = document.getElementById('header');
   const concept_title = document.getElementById('concept_title');
   const concept_subtitle = document.getElementById('concept_subtitle');
   const concept_explanation_p = document.getElementById('concept_explanation_p');
@@ -24,6 +25,7 @@ window.addEventListener('load', () => {
 
   window.addEventListener('scroll', () => {
     // conceptの部分
+    const header_menu_scroll = header_menu.getBoundingClientRect().top;
     const concept_title_scroll = concept_title.getBoundingClientRect().top;
     const concept_subtitle_scroll = concept_subtitle.getBoundingClientRect().top;
     const concept_explanation_text_scroll = concept_explanation_p.getBoundingClientRect().top;
@@ -59,6 +61,8 @@ window.addEventListener('load', () => {
     fadeIn(service_subtitle, service_subtitle_scroll);
     fadeIn(contact_title, contact_title_scroll);
     fadeIn(contact_subtitle, contact_subtitle_scroll);
+
+    header_background_change(header_menu, header_menu_scroll, concept_title_scroll);
   });
   
   
@@ -70,4 +74,15 @@ window.addEventListener('load', () => {
       ele.classList.add('active');
     }
   }
+
+  function header_background_change(header_menu, header_menu_scroll, concept_title_scroll){
+    if(header_menu_scroll > concept_title_scroll - 100){
+      header_menu.classList.add('active');
+    }else{
+      if(header_menu.classList.contains('active')){
+        header_menu.classList.remove('active');
+      }
+    }
+  }
 });
+      
