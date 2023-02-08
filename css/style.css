@@ -1059,6 +1059,11 @@ body {
   font-style: italic;
   margin: 0;
 }
+@media screen and (max-width: 900px) {
+  .contact_page .contact_page_title {
+    font-size: 1.875rem;
+  }
+}
 .contact_page .contact_page_subtitle {
   position: absolute;
   font-size: 5.625rem;
@@ -1067,16 +1072,40 @@ body {
   padding-left: 48px;
   bottom: 48px;
 }
+@media screen and (max-width: 900px) {
+  .contact_page .contact_page_subtitle {
+    font-size: 2.5rem;
+  }
+}
 
 .contact_form {
   padding: 100px 370px 0 370px;
 }
+@media screen and (max-width: 900px) {
+  .contact_form {
+    padding: 100px 15px 0 15px;
+  }
+}
 .contact_form .form_part_checkbox {
   margin-bottom: 35px;
 }
+@media screen and (max-width: 900px) {
+  .contact_form .form_part_checkbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact_form .form_part_checkbox .contact_container_part {
+    margin-bottom: 10px;
+  }
+}
 .contact_form .form_part_checkbox label {
   font-weight: bold;
-  margin-bottom: 7px;
+  margin-bottom: 15px;
   display: block;
 }
 .contact_form .form_part_checkbox span {
@@ -1097,12 +1126,22 @@ body {
   height: 30px;
   margin-bottom: 25px;
 }
+@media screen and (max-width: 900px) {
+  .contact_form .form_part input {
+    width: 100%;
+  }
+}
 .contact_form .form_part textarea {
   border: 1px solid black;
   width: 700px;
   height: 171px;
   border-radius: 3px;
   margin-bottom: 80px;
+}
+@media screen and (max-width: 900px) {
+  .contact_form .form_part textarea {
+    width: 100%;
+  }
 }
 .contact_form .view_more_btn_form {
   display: block;

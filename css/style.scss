@@ -749,6 +749,9 @@ body{
     color: white;
     font-style: italic;
     margin: 0;
+    @include media{
+      font-size: 1.875rem;
+    }
   }
   .contact_page_subtitle{
     position: absolute;
@@ -757,17 +760,30 @@ body{
     opacity: 0.1;
     padding-left: 48px;
     bottom: 48px;
+    @include media{
+      font-size: 2.5rem;
+    }
   }
 }
 
 // 問い合わせフォーム画面
 .contact_form{
   padding: 100px 370px 0 370px;
+  @include media{
+    padding: 100px 15px 0 15px;
+  }
   .form_part_checkbox{
     margin-bottom: 35px;
+    @include media{
+      display: flex;
+      flex-direction: column;
+      .contact_container_part{
+        margin-bottom: 10px;
+      }
+    }
     label{
       font-weight: bold;
-      margin-bottom: 7px;
+      margin-bottom: 15px;
       display: block;
     }
     span{
@@ -787,6 +803,9 @@ body{
       width: 700px;
       height: 30px;
       margin-bottom: 25px;
+      @include media{
+        width: 100%;
+      }
     }
     textarea{
       border: 1px solid black;
@@ -794,6 +813,9 @@ body{
       height: 171px;
       border-radius: 3px;
       margin-bottom: 80px;
+      @include media{
+        width: 100%;
+      }
     }
   }
   .view_more_btn_form {

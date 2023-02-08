@@ -16,7 +16,8 @@
   <script src="js/slick/slick.js"></script>
   <script src="js/slick/slick.min.js"></script>
   <script src="js/slider.js"></script>
-  <script src="js/scroll.js"></script>
+  <script src="js/contact_scroll.js"></script>
+  <script src="js/hamburger.js"></script>
 </head>
 <body>
   <header>
@@ -33,19 +34,38 @@
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </div>
+        <div id="hunbargur_menu" class="hunbargur_menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="mask_menu" class="mask_menu">
+          <ul>
+            <li><a href="index.html#concept" id="mask_concept">Concept</a></li>
+            <li><a href="index.html#service" id="mask_service">Service</a></li>
+            <li><a href="index.html#works" id="mask_work">Works</a></li>
+            <li><a href="index.html#contact" id="mask_contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
       <h1 class="contact_page_title">Contact</h1>
       <h1 class="contact_page_subtitle">Contact us</h1>
     </div>
   </header>
   <main>
-    <section class="contact_form">
+    <section class="contact_form" id="contact_form">
       <form action="">
         <div class="form_part_checkbox">
           <label>お問い合わせ内容</label>
-          <input type="checkbox" name="billing" id="billing"><span>資料請求</span>
-          <input type="checkbox" name="consult" id="consult"><span>お電話でのご相談を希望</span>
-          <input type="checkbox" name="apply" id="apply"><span>申し込み</span>
+          <dis class="contact_container_part">
+            <input type="checkbox" name="billing" id="billing"><span>資料請求</span>
+          </dis>
+          <dis class="contact_container_part">
+            <input type="checkbox" name="consult" id="consult"><span>お電話でのご相談を希望</span>
+          </dis>
+          <dis class="contact_container_part">
+            <input type="checkbox" name="apply" id="apply"><span>申し込み</span>
+          </dis>
         </div>
         <div class="form_part">
           <label>担当者名</label>
